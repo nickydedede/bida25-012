@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>FOCUS ON GOD Apparel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -12,7 +17,112 @@
 <!-- NAVIGATION -->
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="nav-logo">3D SOCIAL CLUB</a>
+        <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
         <div class="nav-links">
             <a href="index.html#hero">Home</a>
             <a href="index.html#about">About</a>
+            <a href="products.html">Products</a>
+            <a href="contacts.html">Contact</a>
+            <a href="delivery.html">Delivery Info</a>
+            <a href="faq.html">FAQs</a>
+            <a href="sitemap.html">Site Map</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1>WEAR YOUR FAITH BOLDLY</h1>
+        <p>God is doing a new thing — and He is doing it now.</p>
+        <button class="hero-btn" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">
+            Shop Now
+        </button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="mission">
+    <h2>Our Mission</h2>
+    <p>
+        At <strong>FOCUS ON GOD Apparel</strong>, we design fashion rooted in faith, purpose, and identity.
+        Our goal is to inspire believers to represent Christ boldly in everyday life.
+    </p>
+</section>
+
+<!-- FEATURED -->
+<section id="featured" class="featured">
+    <h2>Featured Collection</h2>
+    <div class="featured-container">
+        <div class="featured-card">
+            <h3>Faith Over Fear</h3>
+            <p>Stand firm. Stay fearless.</p>
+        </div>
+        <div class="featured-card">
+            <h3>Grace Wins</h3>
+            <p>Victory through Him.</p>
+        </div>
+        <div class="featured-card">
+            <h3>Stay Focused</h3>
+            <p>Keep your eyes on God.</p>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+
+    <form class="review-form" id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <textarea id="review" placeholder="Write your review..." required></textarea>
+
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+            <option value="4">⭐⭐⭐⭐ (4)</option>
+            <option value="3">⭐⭐⭐ (3)</option>
+            <option value="2">⭐⭐ (2)</option>
+            <option value="1">⭐ (1)</option>
+        </select>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div id="reviewsContainer"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>
+        WhatsApp:
+        <a href="https://wa.me/26778614682" target="_blank">+267 7861 4682</a>
+    </p>
+
+    <p>
+        Instagram:
+        <a href="https://www.instagram.com/focusongodapparel" target="_blank">@focusongodapparel</a>
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
+    <div class="footer-links">
+        <a href="index.html#hero">Home</a> |
+        <a href="index.html#about">About</a> |
+        <a href="products.html">Products</a> |
+        <a href="contacts.html">Contact</a> |
+        <a href="delivery.html">Delivery Info</a> |
+        <a href="faq.html">FAQs</a> |
+        <a href="sitemap.html">Site Map</a>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+</body>
+</html>
