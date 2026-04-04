@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Your Order | FOCUS ON GOD Apparel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Simple inline styles for this page */
+        .track-order-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .track-order-form {
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        .track-order-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .track-order-form button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #c1121f;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .track-order-form button:hover {
+            background-color: #111;
+        }
+
+        .confirmation-message {
+            margin-top: 20px;
+            color: #111;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
+        <div class="nav-links">
+            <a href="index.html#hero">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="track-order.html">Track Order</a>
+        </div>
+    </div>
+</nav>
+
+<!-- TRACK YOUR ORDER SECTION -->
+<section class="track-order-section">
+    <h1>Track Your Order</h1>
+    <p>Enter your Order ID and Email below to see the status of your order.</p>
+
+    <form class="track-order-form" id="trackOrderForm">
+        <input type="text" placeholder="Enter your Order ID" required id="orderId">
+        <input type="email" placeholder="Enter your Email" required id="orderEmail">
+        <button type="submit">Track Order</button>
+    </form>
+
+    <p class="confirmation-message" id="confirmationMessage"></p>
+
+    <p style="margin-top:20px; color:#111;">
+        If you encounter any issues, contact us via:<br>
+        WhatsApp: <a href="https://wa.me/26778614682" target="_blank">+267 7861 4682</a><br>
+        Email: <a href="mailto:@focusongodapparel.com">@focusongodapparel.com</a>
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
+    <div class="footer-links">
+        <a href="index.html#hero">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="products.html">Products</a> |
+        <a href="index.html#contact">Contact</a>
+    </div>
+</footer>
+
+<!-- Simple JS for fake tracking -->
+<script>
+    const form = document.getElementById('trackOrderForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // prevent form submission
+
+        const orderId = document.getElementById('orderId').value;
+        const email = document.getElementById('orderEmail').value;
+
+        // Show a fake dynamic confirmation
+        confirmationMessage.style.display = 'block';
+        confirmationMessage.innerHTML = `Thank you! Your order <strong>${orderId}</strong> associated with <strong>${email}</strong> is being processed. You will receive updates via email or WhatsApp.`;
+        
+        // Clear the form fields
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
