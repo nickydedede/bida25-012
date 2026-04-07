@@ -6,6 +6,7 @@
 <title>Lookbook | FOCUS ON GOD Apparel</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- Navigation -->
@@ -34,18 +35,45 @@
     </div>
 </section>
 
-<!-- Gallery Section -->
-<section class="lookbook-gallery-section">
-    <h2>Featured Styles</h2>
-    <div class="lookbook-gallery">
-        <img src="team.jpg" alt="F.O.G Lifestyle">
-        <img src="dan&map.jpg" alt="Set Apart Lifestyle">
-        <img src="dzee&vic.jpg" alt="Holy Spirit Activate Lifestyle">
-        <img src="lefhika.jpg" alt="Redeemed Lifestyle">
-        <img src="tirelo.jpg" alt="The Word Ascends Lifetyle">
-        <img src="alisha.jpg" alt="God Did Lifestyle">
-        <img scr="victor.jpg" alt="Womp Womp Lifestyle">
+<!-- SLIDESHOW -->
+<section class="lookbook-slider">
+
+    <div class="slider">
+
+        <div class="slide active">
+            <img src="team.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="dan&map.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="dzee&vic.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="lefhika.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="tirelo.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="alisha.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="victor.jpg" alt="">
+        </div>
+
     </div>
+
+    <!-- Controls -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
 </section>
 
 <!-- Footer -->
@@ -58,5 +86,34 @@
     </p>
 </footer>
 
+<!-- SLIDER SCRIPT -->
+<script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+// Next button
+document.querySelector(".next").onclick = () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+};
+
+// Previous button
+document.querySelector(".prev").onclick = () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+};
+
+// Auto slide every 5 seconds
+setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}, 5000);
+</script>
+
 </body>
-</html>
+    </html>
