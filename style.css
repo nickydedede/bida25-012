@@ -84,13 +84,12 @@ p {
 }
 
 /* =========================
-   Hero Section (Full-Screen)
+   Hero Section
 ========================= */
-.hero {
+.hero, .lookbook-hero {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("focusongod-logo.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -102,27 +101,31 @@ p {
     overflow: hidden;
 }
 
-.hero::after {
+.lookbook-hero {
+    background-image: url("focusongod-logo.png");
+}
+
+.hero::after, .lookbook-hero::after {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.3);
 }
 
-.hero-content {
+.hero-content, .lookbook-hero .hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
     padding: 20px;
 }
 
-.hero h1 {
+.hero h1, .lookbook-hero h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.hero p {
+.hero p, .lookbook-hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
@@ -145,6 +148,62 @@ p {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     transform: translateY(-3px);
 }
+
+/* =========================
+   Lookbook Slider
+========================= */
+.lookbook-slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 40px auto;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+    display: none;
+    justify-content: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Slider buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-red);
+    border: none;
+    color: var(--primary-white);
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--primary-black);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 
 /* =========================
    Page Headers
@@ -181,7 +240,7 @@ p {
 }
 
 /* =========================
-   Mission / About / Founder
+   Mission / Founder
 ========================= */
 .mission,
 .founder-section {
@@ -309,42 +368,7 @@ p {
 .carousel-btn.next { right: 10px; }
 
 /* =========================
-   Lookbook Section
-========================= */
-.lookbook-section {
-    padding: 70px 8%;
-    background-color: var(--light-gray);
-    text-align: center;
-}
-
-.lookbook-section h2 {
-    font-size: 2.5rem;
-    color: var(--primary-red);
-    margin-bottom: 40px;
-    font-weight: bold;
-}
-
-.lookbook-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.lookbook-container img {
-    max-width: 300px; /* controls image size */
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.lookbook-container img:hover {
-    transform: scale(1.05);
-}
-
-/* =========================
-   Help / FAQ / Contact / Other Pages
+   Help / FAQ / Contact
 ========================= */
 .track-order-section,
 .help-info-section,
@@ -430,6 +454,45 @@ p {
     text-align: left;
 }
 
+/* FAQ Accordion */
+.accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.accordion-button {
+    background-color: var(--light-gray);
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: left;
+    padding: 16px;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+}
+
+.accordion-button.collapsed:hover {
+    background-color: #e6e6e6;
+}
+
+.accordion-body {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 16px;
+}
+
 /* =========================
    Newsletter / Footer
 ========================= */
@@ -486,48 +549,11 @@ footer a:hover {
 }
 
 /* =========================
-   FAQ Accordion / Bootstrap-like
-========================= */
-.accordion-item {
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-}
-
-.accordion-button {
-    background-color: var(--light-gray);
-    color: var(--primary-red);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-}
-
-.accordion-button.collapsed:hover {
-    background-color: #e6e6e6;
-}
-
-.accordion-body {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* =========================
    Responsive
 ========================= */
 @media (max-width: 1024px) {
     .carousel-item img { width: 70%; }
-    .lookbook-container img { max-width: 250px; }
+    .slide img { width: 70%; }
 }
 
 @media (max-width: 768px) {
@@ -539,7 +565,7 @@ footer a:hover {
     .nav-links a { margin: 10px 0 0 0; }
 
     .carousel-item img { width: 80%; }
-    .lookbook-container img { max-width: 200px; }
+    .slide img { width: 80%; }
     .contact-cards { flex-direction: column; align-items: center; }
 
     .accordion-button {
@@ -558,6 +584,6 @@ footer a:hover {
     .page-header h1 { font-size: 1.8rem; }
     .page-header p { font-size: 1rem; }
     .carousel-item img { width: 90%; }
-    .lookbook-container img { max-width: 150px; }
+    .slide img { width: 90%; }
     .carousel-item h3 { font-size: 1.2rem; }
    }
