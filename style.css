@@ -309,7 +309,6 @@ p {
 .carousel-btn.next { right: 10px; }
 
 /* =========================
-/* =========================
    Lookbook / Gallery Images - FIXED
 ========================= */
 .lookbook-container {
@@ -342,6 +341,29 @@ p {
     transform: scale(1.03);
 }
 
+/* =========================
+   Lookbook Responsive
+========================= */
+@media (max-width: 1024px) {
+    .lookbook-item {
+        flex: 1 1 220px;  /* slightly smaller on tablets */
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lookbook-item {
+        flex: 1 1 45%;    /* two per row on smaller tablets */
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .lookbook-item {
+        flex: 1 1 90%;    /* one per row on phones */
+        max-width: 90%;
+    }
+}
 /* =========================
    Help / FAQ / Contact / Other Pages
 ========================= */
