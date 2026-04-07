@@ -181,7 +181,7 @@ p {
 }
 
 /* =========================
-   Mission / Founder Section
+   Mission / About / Founder
 ========================= */
 .mission,
 .founder-section {
@@ -309,61 +309,40 @@ p {
 .carousel-btn.next { right: 10px; }
 
 /* =========================
-   Lookbook / Gallery Images - FIXED
+   Lookbook Section
 ========================= */
+.lookbook-section {
+    padding: 70px 8%;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+.lookbook-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
 .lookbook-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    margin: 40px auto;
-    max-width: 1200px; /* max width for the whole gallery */
+    gap: 25px;
 }
 
-.lookbook-item {
-    flex: 1 1 250px;   /* base width 250px */
-    max-width: 300px;  /* limit width per item */
-    overflow: hidden;
+.lookbook-container img {
+    max-width: 300px; /* controls image size */
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-.lookbook-item img {
-    width: 100%;       /* fill the item container */
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    object-fit: cover;
+.lookbook-container img:hover {
+    transform: scale(1.05);
 }
 
-.lookbook-item:hover {
-    transform: scale(1.03);
-}
-
-/* =========================
-   Lookbook Responsive
-========================= */
-@media (max-width: 1024px) {
-    .lookbook-item {
-        flex: 1 1 220px;  /* slightly smaller on tablets */
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .lookbook-item {
-        flex: 1 1 45%;    /* two per row on smaller tablets */
-        max-width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .lookbook-item {
-        flex: 1 1 90%;    /* one per row on phones */
-        max-width: 90%;
-    }
-}
 /* =========================
    Help / FAQ / Contact / Other Pages
 ========================= */
@@ -452,46 +431,6 @@ p {
 }
 
 /* =========================
-   FAQ Accordion / Bootstrap-like
-========================= */
-.accordion-item {
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-}
-
-.accordion-button {
-    background-color: var(--light-gray);
-    color: var(--primary-red);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 16px 20px;
-    cursor: pointer;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-}
-
-.accordion-button.collapsed:hover {
-    background-color: #e6e6e6;
-}
-
-.accordion-body {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 15px 20px;
-}
-
-/* =========================
    Newsletter / Footer
 ========================= */
 .newsletter {
@@ -547,10 +486,48 @@ footer a:hover {
 }
 
 /* =========================
+   FAQ Accordion / Bootstrap-like
+========================= */
+.accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.accordion-button {
+    background-color: var(--light-gray);
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+}
+
+.accordion-button.collapsed:hover {
+    background-color: #e6e6e6;
+}
+
+.accordion-body {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* =========================
    Responsive
 ========================= */
 @media (max-width: 1024px) {
     .carousel-item img { width: 70%; }
+    .lookbook-container img { max-width: 250px; }
 }
 
 @media (max-width: 768px) {
@@ -562,9 +539,17 @@ footer a:hover {
     .nav-links a { margin: 10px 0 0 0; }
 
     .carousel-item img { width: 80%; }
-    .lookbook-item { flex: 1 1 45%; max-width: 45%; }
-    .accordion-button { font-size: 1rem; padding: 14px 20px; }
-    .accordion-body { font-size: 0.95rem; }
+    .lookbook-container img { max-width: 200px; }
+    .contact-cards { flex-direction: column; align-items: center; }
+
+    .accordion-button {
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+
+    .accordion-body {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -573,6 +558,6 @@ footer a:hover {
     .page-header h1 { font-size: 1.8rem; }
     .page-header p { font-size: 1rem; }
     .carousel-item img { width: 90%; }
+    .lookbook-container img { max-width: 150px; }
     .carousel-item h3 { font-size: 1.2rem; }
-    .lookbook-item { flex: 1 1 90%; max-width: 90%; }
    }
