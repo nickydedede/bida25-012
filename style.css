@@ -253,6 +253,45 @@ p {
 }
 
 /* =========================
+   Products Page Images
+========================= */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center all product cards */
+    gap: 20px;
+}
+
+.product-card {
+    width: 250px; /* uniform width */
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* prevent distortion */
+    border-radius: 8px;
+}
+
+/* =========================
+   About Section Image & Text Centering
+========================= */
+.mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mission img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* =========================
    Footer
 ========================= */
 footer {
@@ -281,9 +320,12 @@ footer a:hover {
     .hero h1 { font-size: 2rem; }
     .hero-btn { font-size: 1rem; padding: 10px 25px; }
     .faq-question { font-size: 1rem; }
+    .product-card { width: 45%; }
+    .mission img { margin-bottom: 15px; }
 }
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 1.5rem; }
     .faq-question { font-size: 0.95rem; }
-   }
+    .product-card { width: 100%; }
+}
