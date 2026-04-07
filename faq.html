@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>FAQs | FOCUS ON GOD Apparel</title>
@@ -7,11 +8,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-</head>
+</head> 
 
 <body>
 
-  <!--NAVIGATION-->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
@@ -29,7 +30,7 @@
     </div>
   </nav>
 
-  <!-- FAQ Section -->
+  <!-- FAQ SECTION -->
   <section class="faq-section">
     <h1>Frequently Asked Questions</h1>
     <p>Find answers to common questions about FOCUS ON GOD Apparel.</p>
@@ -39,7 +40,7 @@
       <div class="faq">
         <button class="faq-question">How do I place an order?</button>
         <div class="faq-answer">
-          <p>You can place your order through our website by contacting us directly on WhatsApp.</p>
+          <p>You can place your order through our website or by contacting us directly on WhatsApp.</p>
         </div>
       </div>
 
@@ -67,7 +68,7 @@
       <div class="faq">
         <button class="faq-question">What if my size doesn't fit?</button>
         <div class="faq-answer">
-          <p>It is the customer’s responsibility to ensure that they order the correct sizes.</p>
+          <p>It is the customer's responsibility to ensure that they order the right sizes.</p>
         </div>
       </div>
 
@@ -91,7 +92,7 @@
     </div>
   </section>
 
-  <!--FOOTER-->
+  <!-- FOOTER -->
   <footer class="footer">
     <p>2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
     <div class="footer-links">
@@ -104,7 +105,7 @@
     </div>
   </footer>
 
-  <!-- FAQ Script -->
+  <!-- FAQ JS -->
   <script>
     const faqs = document.querySelectorAll(".faq-question");
 
@@ -112,15 +113,11 @@
       button.addEventListener("click", () => {
         const answer = button.nextElementSibling;
 
-        // Toggle current answer
-        answer.classList.toggle("active");
+        // Toggle visibility
+        answer.classList.toggle("show");
 
-        // Hide all other answers
-        faqs.forEach(otherBtn => {
-          if(otherBtn !== button) {
-            otherBtn.nextElementSibling.classList.remove("active");
-          }
-        });
+        // Toggle active state for question styling
+        button.classList.toggle("active");
       });
     });
   </script>
