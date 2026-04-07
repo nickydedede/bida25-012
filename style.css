@@ -84,12 +84,13 @@ p {
 }
 
 /* =========================
-   Hero Section
+   Hero Section (Full-Screen)
 ========================= */
-.hero, .lookbook-hero {
+.hero {
     position: relative;
     height: 100vh;
     width: 100%;
+    background-image: url("focusongod-logo.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -101,31 +102,27 @@ p {
     overflow: hidden;
 }
 
-.lookbook-hero {
-    background-image: url("focusongod-logo.png");
-}
-
-.hero::after, .lookbook-hero::after {
+.hero::after {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.3);
 }
 
-.hero-content, .lookbook-hero .hero-content {
+.hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
     padding: 20px;
 }
 
-.hero h1, .lookbook-hero h1 {
+.hero h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.hero p, .lookbook-hero p {
+.hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
@@ -148,62 +145,6 @@ p {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     transform: translateY(-3px);
 }
-
-/* =========================
-   Lookbook Slider
-========================= */
-.lookbook-slider {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    margin: 40px auto;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    transition: opacity 0.5s ease;
-    display: none;
-    justify-content: center;
-}
-
-.slide.active {
-    display: flex;
-}
-
-.slide img {
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 12px;
-}
-
-/* Slider buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--primary-red);
-    border: none;
-    color: var(--primary-white);
-    font-size: 2rem;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.prev:hover, .next:hover {
-    background-color: var(--primary-black);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
 
 /* =========================
    Page Headers
@@ -270,7 +211,7 @@ p {
 }
 
 /* =========================
-   Carousel / Products
+   Products Carousel
 ========================= */
 .carousel-container {
     position: relative;
@@ -366,6 +307,23 @@ p {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
+/* =========================
+   Lookbook Slider
+========================= */
+.lookbook-slider .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lookbook-slider .slide img {
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
 
 /* =========================
    Help / FAQ / Contact
@@ -467,9 +425,6 @@ p {
     color: var(--primary-red);
     font-weight: 600;
     font-size: 1.1rem;
-    width: 100%;
-    text-align: left;
-    padding: 16px;
 }
 
 .accordion-button:focus {
@@ -490,7 +445,6 @@ p {
     color: var(--primary-black);
     font-size: 1rem;
     line-height: 1.5;
-    padding: 16px;
 }
 
 /* =========================
@@ -552,8 +506,8 @@ footer a:hover {
    Responsive
 ========================= */
 @media (max-width: 1024px) {
-    .carousel-item img { width: 70%; }
-    .slide img { width: 70%; }
+    .carousel-item img,
+    .lookbook-slider .slide img { width: 70%; }
 }
 
 @media (max-width: 768px) {
@@ -564,10 +518,9 @@ footer a:hover {
     .nav-container { flex-direction: column; }
     .nav-links a { margin: 10px 0 0 0; }
 
-    .carousel-item img { width: 80%; }
-    .slide img { width: 80%; }
-    .contact-cards { flex-direction: column; align-items: center; }
-
+    .carousel-item img,
+    .lookbook-slider .slide img { width: 80%; }
+    
     .accordion-button {
         font-size: 1rem;
         padding: 14px 20px;
@@ -583,7 +536,8 @@ footer a:hover {
     .hero p { font-size: 1rem; }
     .page-header h1 { font-size: 1.8rem; }
     .page-header p { font-size: 1rem; }
-    .carousel-item img { width: 90%; }
-    .slide img { width: 90%; }
+
+    .carousel-item img,
+    .lookbook-slider .slide img { width: 90%; }
     .carousel-item h3 { font-size: 1.2rem; }
    }
