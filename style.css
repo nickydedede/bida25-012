@@ -91,7 +91,7 @@ p {
     height: 100vh;
     width: 100%;
     background-image: url("focusongod-logo.png");
-    background-size: cover; /* fills screen */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
@@ -181,7 +181,7 @@ p {
 }
 
 /* =========================
-   Mission / About / Founder
+   Mission / Founder Section
 ========================= */
 .mission,
 .founder-section {
@@ -200,7 +200,7 @@ p {
 .mission p,
 .founder-section p {
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto 30px auto;
     line-height: 1.6;
 }
@@ -208,15 +208,6 @@ p {
 .founder-section .highlight {
     font-weight: bold;
     color: var(--primary-red);
-}
-
-/* Ensure images inside About / Mission are centered */
-.mission img,
-.founder-section img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
 }
 
 /* =========================
@@ -248,7 +239,7 @@ p {
 
 .carousel-item img {
     width: 60%;
-    max-width: 350px; /* limits size for lookbook/product */
+    max-width: 400px;
     height: auto;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -316,6 +307,39 @@ p {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
+/* =========================
+   Lookbook / Gallery Images
+========================= */
+.lookbook-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.lookbook-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.lookbook-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.lookbook-item:hover {
+    transform: scale(1.03);
+}
 
 /* =========================
    Help / FAQ / Contact / Other Pages
@@ -405,6 +429,46 @@ p {
 }
 
 /* =========================
+   FAQ Accordion / Bootstrap-like
+========================= */
+.accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.accordion-button {
+    background-color: var(--light-gray);
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 16px 20px;
+    cursor: pointer;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+}
+
+.accordion-button.collapsed:hover {
+    background-color: #e6e6e6;
+}
+
+.accordion-body {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 15px 20px;
+}
+
+/* =========================
    Newsletter / Footer
 ========================= */
 .newsletter {
@@ -460,43 +524,6 @@ footer a:hover {
 }
 
 /* =========================
-   FAQ Accordion / Bootstrap-like
-========================= */
-.accordion-item {
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-}
-
-.accordion-button {
-    background-color: var(--light-gray);
-    color: var(--primary-red);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-}
-
-.accordion-button.collapsed:hover {
-    background-color: #e6e6e6;
-}
-
-.accordion-body {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* =========================
    Responsive
 ========================= */
 @media (max-width: 1024px) {
@@ -512,16 +539,9 @@ footer a:hover {
     .nav-links a { margin: 10px 0 0 0; }
 
     .carousel-item img { width: 80%; }
-    .contact-cards { flex-direction: column; align-items: center; }
-
-    .accordion-button {
-        font-size: 1rem;
-        padding: 14px 20px;
-    }
-
-    .accordion-body {
-        font-size: 0.95rem;
-    }
+    .lookbook-item { flex: 1 1 45%; max-width: 45%; }
+    .accordion-button { font-size: 1rem; padding: 14px 20px; }
+    .accordion-body { font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
@@ -531,79 +551,5 @@ footer a:hover {
     .page-header p { font-size: 1rem; }
     .carousel-item img { width: 90%; }
     .carousel-item h3 { font-size: 1.2rem; }
+    .lookbook-item { flex: 1 1 90%; max-width: 90%; }
    }
-
-/* =========================
-   Styled FAQ Section
-========================= */
-.faq-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.faq-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: var(--primary-red);
-}
-
-.faq-card {
-    background-color: var(--primary-white);
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
-
-.faq-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.accordion-button {
-    background-color: var(--light-gray);
-    color: var(--primary-red);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 18px 25px;
-    border-radius: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-}
-
-.accordion-button.collapsed:hover {
-    background-color: #e6e6e6;
-}
-
-.accordion-button::after {
-    content: '+';
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.accordion-button:not(.collapsed)::after {
-    content: '−';
-    transform: rotate(180deg);
-}
-
-.accordion-body {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    font-size: 1rem;
-    line-height: 1.6;
-    padding: 20px 25px;
-}
