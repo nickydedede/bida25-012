@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>FAQs | FOCUS ON GOD Apparel</title>
@@ -12,7 +11,7 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!--NAVIGATION-->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
@@ -30,7 +29,7 @@
     </div>
   </nav>
 
-  <!-- FAQ SECTION -->
+  <!-- FAQ Section -->
   <section class="faq-section">
     <h1>Frequently Asked Questions</h1>
     <p>Find answers to common questions about FOCUS ON GOD Apparel.</p>
@@ -54,14 +53,21 @@
       <div class="faq">
         <button class="faq-question">How do I track my order?</button>
         <div class="faq-answer">
-          <p>Go to the track orders page and enter your Order ID and email to check your order status.</p>
+          <p>Go to the Track Orders page and enter your Order ID and email to check your order status.</p>
         </div>
       </div>
 
       <div class="faq">
         <button class="faq-question">What sizes are available?</button>
         <div class="faq-answer">
-          <p>Most of our apparel comes in small, medium, large, and extra large.</p>
+          <p>Most of our apparel comes in Small, Medium, Large, and Extra Large.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">What if my size doesn't fit?</button>
+        <div class="faq-answer">
+          <p>It is the customer’s responsibility to ensure that they order the correct sizes.</p>
         </div>
       </div>
 
@@ -85,7 +91,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!--FOOTER-->
   <footer class="footer">
     <p>2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
     <div class="footer-links">
@@ -98,30 +104,23 @@
     </div>
   </footer>
 
-  <!-- FAQ ACCORDION SCRIPT -->
+  <!-- FAQ Script -->
   <script>
-    const faqItems = document.querySelectorAll('.faq');
+    const faqs = document.querySelectorAll(".faq-question");
 
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      const answer = item.querySelector('.faq-answer');
+    faqs.forEach(button => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
 
-      question.addEventListener('click', () => {
-        // Close other open items
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        // Toggle current answer
+        answer.classList.toggle("active");
+
+        // Hide all other answers
+        faqs.forEach(otherBtn => {
+          if(otherBtn !== button) {
+            otherBtn.nextElementSibling.classList.remove("active");
           }
         });
-
-        // Toggle current item
-        item.classList.toggle('active');
-        if (item.classList.contains('active')) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-        } else {
-          answer.style.maxHeight = null;
-        }
       });
     });
   </script>
