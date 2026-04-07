@@ -92,12 +92,11 @@ p {
     height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* center vertically */
     text-align: center;
     color: var(--primary-white);
-    padding-top: 10%;
     background-image: url("focusongod-logo.png"); /* Your logo image */
-    background-size: contain; /* Scale logo nicely */
+    background-size: cover; /* Fill entire viewport */
     background-repeat: no-repeat;
     background-position: center center;
     background-color: var(--primary-black); /* Fallback color */
