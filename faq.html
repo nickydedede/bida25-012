@@ -1,101 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>FAQs | FOCUS ON GOD Apparel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>FAQs | FOCUS ON GOD Apparel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
-    <div class="nav-links">
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">FOCUS ON GOD</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="lookbook.html">Look Book</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="faq.html">FAQ</a>
+        <a href="track-orders.html">Track Orders</a>
+        <a href="delivery-info.html">Delivery Info</a>
+        <a href="site-map.html">Site Map</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about FOCUS ON GOD Apparel.</p>
+
+    <div class="faq-container">
+
+      <div class="faq">
+        <button class="faq-question">How do I place an order?</button>
+        <div class="faq-answer">
+          <p>You can place your order through our website by contacting us directly on WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">How long does delivery take?</button>
+        <div class="faq-answer">
+          <p>Delivery within Gaborone usually takes 1-2 days. Other locations may take 3-5 days.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">How do I track my order?</button>
+        <div class="faq-answer">
+          <p>Go to the Track Orders page and enter your Order ID and email to check your order status.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">What sizes are available?</button>
+        <div class="faq-answer">
+          <p>Most of our apparel comes in small, medium, large, and extra large.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">What if my size doesn't fit?</button>
+        <div class="faq-answer">
+          <p>It is the customer's responsibility to ensure that they order the correct size.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">Do you deliver outside Botswana?</button>
+        <div class="faq-answer">
+          <p>Currently, we deliver within Botswana, but we plan to expand internationally soon.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question">How can I contact you?</button>
+        <div class="faq-answer">
+          <p>
+            WhatsApp: <a href="https://wa.me/26778614682" target="_blank">+26778614682</a><br>
+            Instagram: <a href="https://www.instagram.com/focusongodapparel" target="_blank">@focusongodapparel</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
+    <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="about.html">About Us</a>
-      <a href="lookbook.html">Look Book</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="faq.html">FAQ</a>
+      <a href="track-orders.html">Track Orders</a>
+      <a href="delivery-info.html">Delivery Info</a>
+      <a href="site-map.html">Site Map</a>
+      <a href="faq.html">FAQs</a>
     </div>
-  </div>
-</nav>
+  </footer>
 
-<!-- FAQ SECTION -->
-<section class="faq-section">
-  <h1>Frequently Asked Questions</h1>
-  <p>Find answers to common questions about FOCUS ON GOD Apparel.</p>
+  <!-- FAQ TOGGLE SCRIPT -->
+  <script>
+    const faqs = document.querySelectorAll(".faq-question");
 
-  <div class="faq-container">
+    faqs.forEach(button => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
 
-    <div class="faq">
-      <button class="faq-question">How do I place an order?</button>
-      <div class="faq-answer">
-        <p>You can place your order through our website by contacting us directly on WhatsApp.</p>
-      </div>
-    </div>
+        // Toggle display
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
 
-    <div class="faq">
-      <button class="faq-question">How long does delivery take?</button>
-      <div class="faq-answer">
-        <p>Delivery within Gaborone usually takes 1-2 days. Other locations may take 3-5 days.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-question">How do I track my order?</button>
-      <div class="faq-answer">
-        <p>Go to the Track Orders page and enter your Order ID and email to check your order status.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-question">What sizes are available?</button>
-      <div class="faq-answer">
-        <p>Most of our apparel comes in Small, Medium, Large, and Extra Large.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-question">Do you deliver outside Botswana?</button>
-      <div class="faq-answer">
-        <p>Currently, we deliver within Botswana, but we plan to expand internationally soon.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-question">How can I contact you?</button>
-      <div class="faq-answer">
-        <p>
-          WhatsApp: <a href="https://wa.me/26778614682" target="_blank">+26778614682</a><br>
-          Instagram: <a href="https://www.instagram.com/focusongodapparel" target="_blank">@focusongodapparel</a>
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>2026 FOCUS ON GOD Apparel | Wear Your Faith Boldly</p>
-</footer>
-
-<!-- FAQ SCRIPT -->
-<script>
-const faqs = document.querySelectorAll(".faq-question");
-
-faqs.forEach(button => {
-  button.addEventListener("click", () => {
-    const answer = button.nextElementSibling;
-    button.classList.toggle("active");
-    answer.classList.toggle("show");
-  });
-});
-</script>
+        // Optional: close other answers when one is opened
+        faqs.forEach(otherBtn => {
+          const otherAnswer = otherBtn.nextElementSibling;
+          if (otherAnswer !== answer) {
+            otherAnswer.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
