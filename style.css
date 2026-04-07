@@ -91,7 +91,7 @@ p {
     height: 100vh;
     width: 100%;
     background-image: url("focusongod-logo.png");
-    background-size: cover;
+    background-size: cover; /* fills screen */
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
@@ -181,7 +181,7 @@ p {
 }
 
 /* =========================
-   Mission / About
+   Mission / About / Founder
 ========================= */
 .mission,
 .founder-section {
@@ -200,7 +200,7 @@ p {
 .mission p,
 .founder-section p {
     font-size: 1.2rem;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto 30px auto;
     line-height: 1.6;
 }
@@ -208,6 +208,15 @@ p {
 .founder-section .highlight {
     font-weight: bold;
     color: var(--primary-red);
+}
+
+/* Ensure images inside About / Mission are centered */
+.mission img,
+.founder-section img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /* =========================
@@ -239,7 +248,7 @@ p {
 
 .carousel-item img {
     width: 60%;
-    max-width: 400px;
+    max-width: 350px; /* limits size for lookbook/product */
     height: auto;
     border-radius: 12px;
     margin-bottom: 15px;
