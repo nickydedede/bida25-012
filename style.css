@@ -85,22 +85,35 @@ p {
 }
 
 /* =========================
-   Hero Section
+   Hero Section / Home Page Background
 ========================= */
-.hero, .lookbook-hero {
+.hero {
     position: relative;
-    height: 60vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     color: var(--primary-white);
-    background-color: var(--primary-black);
+    padding-top: 10%;
+    background-image: url("focusongod-logo.png"); /* Your logo image */
+    background-size: contain; /* Scale logo nicely */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: var(--primary-black); /* Fallback color */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3); /* Overlay for readability */
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Text above overlay */
     max-width: 800px;
     padding: 20px;
 }
