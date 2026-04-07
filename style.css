@@ -84,7 +84,7 @@ p {
 }
 
 /* =========================
-   Hero Section (Full-Screen)
+   Hero Section (Home Page)
 ========================= */
 .hero {
     position: relative;
@@ -147,6 +147,22 @@ p {
 }
 
 /* =========================
+   Lookbook Hero Section
+========================= */
+.lookbook-hero {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light-gray);
+}
+
+.lookbook-hero .hero-btn {
+    margin-top: 20px;
+}
+
+/* =========================
    Page Headers
 ========================= */
 .page-header {
@@ -181,7 +197,7 @@ p {
 }
 
 /* =========================
-   Mission / Founder
+   Mission / Founder Section
 ========================= */
 .mission,
 .founder-section {
@@ -211,22 +227,25 @@ p {
 }
 
 /* =========================
-   Products Carousel
+   Carousel / Products & Lookbook
 ========================= */
-.carousel-container {
+.carousel-container,
+.lookbook-slider {
     position: relative;
     overflow: hidden;
     max-width: 100%;
     margin: 40px auto;
 }
 
-.carousel-track {
+.carousel-track,
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
     scroll-snap-type: x mandatory;
 }
 
-.carousel-item {
+.carousel-item,
+.slide {
     flex: 0 0 100%;
     display: flex;
     flex-direction: column;
@@ -237,7 +256,8 @@ p {
     box-sizing: border-box;
 }
 
-.carousel-item img {
+.carousel-item img,
+.slide img {
     width: 60%;
     max-width: 400px;
     height: auto;
@@ -245,17 +265,12 @@ p {
     margin-bottom: 15px;
 }
 
-.carousel-item h3 {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+/* Carousel / Slide Titles & Buttons */
+.carousel-item h3,
+.carousel-item p,
+.slide h3,
+.slide p {
     text-align: center;
-}
-
-.carousel-item p {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 .carousel-item .price {
@@ -286,7 +301,10 @@ p {
     transform: translateY(-3px);
 }
 
-.carousel-btn {
+/* Carousel / Lookbook Navigation Buttons */
+.carousel-btn,
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -301,32 +319,19 @@ p {
     transition: all 0.3s ease;
 }
 
-.carousel-btn:hover {
+.carousel-btn:hover,
+.prev:hover,
+.next:hover {
     background-color: var(--primary-black);
 }
 
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
+.carousel-btn.prev,
+.prev { left: 10px; }
+.carousel-btn.next,
+.next { right: 10px; }
 
 /* =========================
-   Lookbook Slider
-========================= */
-.lookbook-slider .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lookbook-slider .slide img {
-    width: 60%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   Help / FAQ / Contact
+   Help / FAQ / Contact / Other Pages
 ========================= */
 .track-order-section,
 .help-info-section,
@@ -377,6 +382,7 @@ p {
     background-color: var(--primary-black);
 }
 
+/* Help / FAQ Cards */
 .help-container,
 .delivery-container,
 .sitemap-container,
@@ -412,7 +418,9 @@ p {
     text-align: left;
 }
 
-/* FAQ Accordion */
+/* =========================
+   FAQ Accordion / Bootstrap-like
+========================= */
 .accordion-item {
     border-radius: 8px;
     overflow: hidden;
@@ -425,6 +433,7 @@ p {
     color: var(--primary-red);
     font-weight: 600;
     font-size: 1.1rem;
+    padding: 16px 20px;
 }
 
 .accordion-button:focus {
@@ -507,7 +516,7 @@ footer a:hover {
 ========================= */
 @media (max-width: 1024px) {
     .carousel-item img,
-    .lookbook-slider .slide img { width: 70%; }
+    .slide img { width: 70%; }
 }
 
 @media (max-width: 768px) {
@@ -519,8 +528,8 @@ footer a:hover {
     .nav-links a { margin: 10px 0 0 0; }
 
     .carousel-item img,
-    .lookbook-slider .slide img { width: 80%; }
-    
+    .slide img { width: 80%; }
+
     .accordion-button {
         font-size: 1rem;
         padding: 14px 20px;
@@ -536,8 +545,7 @@ footer a:hover {
     .hero p { font-size: 1rem; }
     .page-header h1 { font-size: 1.8rem; }
     .page-header p { font-size: 1rem; }
-
     .carousel-item img,
-    .lookbook-slider .slide img { width: 90%; }
+    .slide img { width: 90%; }
     .carousel-item h3 { font-size: 1.2rem; }
    }
